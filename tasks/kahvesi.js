@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 			return opt + ' ' + value;
 		}).join(' ');
 
-		var cmd = format('%s cover %s %s %s -- -R min %s', istanbul, opts, args, mocha, files);
+		var cmd = format('%s cover %s %s %s -- -R min -t 10000 %s', istanbul, opts, args, mocha, files);
 		grunt.log.debug(cmd);
 		exec(cmd, function(err, stdout, stderr) {
 			if (err) { grunt.fail.fatal(err); }
