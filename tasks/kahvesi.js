@@ -32,9 +32,10 @@ module.exports = function(grunt) {
 			return opt + ' ' + value;
 		}).join(' ');
 
-		var cmd = format('%s cover %s %s %s -- -R min -t 10000 %s', istanbul, opts, args, mocha, files);
+		var cmd = format('%s cover %s %s %s -- -R spec -t 10000 %s', istanbul, opts, args, mocha, files);
 		grunt.log.debug(cmd);
 		exec(cmd, function(err, stdout, stderr) {
+			grunt.log.ok(stdout);
 			if (err) { grunt.fail.fatal(err); }
 			if (/No coverage information was collected/.test(stdout)) {
 				grunt.fail.warn('No coverage information was collected. Report not generated.');
