@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 
 		exec(cmd, function(err, stdout, stderr) {
 			if (err) { grunt.fail.fatal(err); }
-			grunt.log.ok('composite test coverage report generated at ./coverage/index.html');
+			grunt.log.ok('Composite test coverage report generated');
 			return done();
 		});
 	});
