@@ -40,6 +40,7 @@ module.exports = function(grunt) {
 		    process.stdout.write(data);
 		});
 		child.stderr.on('data', function(data) {
+		    process.stderr.write(data);
 			if (/failing/.test(data)) {
 				grunt.fail.fatal(data);
 			}
