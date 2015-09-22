@@ -1,7 +1,7 @@
 {
   "name": "grunt-kahvesi",
   "description": "grunt plugin for generating istanbul + mocha coverage reports",
-  "version": "0.2.0-dev2",
+  "version": "0.2.4",
   "homepage": "https://github.com/tonylukasavage/grunt-kahvesi",
   "author": {
     "name": "Tony Lukasavage",
@@ -42,8 +42,12 @@
     "gruntplugin"
   ],
   "dependencies": {
+<<<<<<< HEAD
     "istanbul": "tonylukasavage/istanbul#includes",
     "should": "^4.0.4",
+=======
+    "istanbul": "^0.3.8",
+>>>>>>> tonylukasavage/master
     "mocha": "^1.21.5"
   }
 }
