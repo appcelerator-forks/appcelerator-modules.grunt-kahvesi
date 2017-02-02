@@ -12,6 +12,9 @@ var exec = require('child_process').exec,
 	format = require('util').format,
 	path = require('path');
 
+var istanbulBin = require.resolve('istanbul/' + require('istanbul/package.json').bin.istanbul)
+var mochaBin = require.resolve('mocha/' + require('mocha/package.json').bin.mocha)
+
 var BIN = path.join(__dirname, '..', 'node_modules', '.bin');
 
 module.exports = function(grunt) {
@@ -19,8 +22,8 @@ module.exports = function(grunt) {
 	grunt.registerMultiTask('kahvesi', 'grunt plugin for generating istanbul + mocha coverage reports', function() {
 		var done = this.async(),
 			options = this.options({ report: 'lcov' }),
-			istanbul = quote(BIN + '/istanbul'),
-			mocha = quote(BIN + '/_mocha'),
+			istanbul = quote(istanbulBin),
+			mocha = quote(mochaBin),
 			files = this.filesSrc.reduce(function(p,c) { return (p || '') + ' "' + c + '" '; }),
 			excludes = ['**/node_modules/**', '**/test/mocha/test/**'],
 			args = process.env.KAHVESI_TEST ? '--no-default-excludes -x ' + quote(excludes.join(' ')) : '',
