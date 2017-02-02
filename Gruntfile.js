@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 		},
 		report: {
 			options: { }
-		},		
+		},
 		// Unit tests.
 		nodeunit: {
 			tests: ['test/*_test.js'],

@@ -39,10 +39,10 @@ module.exports = function(grunt) {
 		var child = exec(cmd);
 
 		child.stdout.on('data', function(data) {
-		    process.stdout.write(data);
+			process.stdout.write(data);
 		});
 		child.stderr.on('data', function(data) {
-		    process.stderr.write(data);
+			process.stderr.write(data);
 			if (/failing/.test(data)) {
 				grunt.fail.fatal(data);
 			}
